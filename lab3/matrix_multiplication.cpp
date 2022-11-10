@@ -10,14 +10,17 @@ using std::mutex;
 
 #define THREAD_COUNT 4
 #define position vector<int>
+#define INITIAL_VALUE (-99999)
 
 vector<vector<int>> first_matrix{{1, 2, 3},
                                  {4, 5, 6},
                                  {7, 8, 9}};
 
-vector<vector<int>> second_matrix{{1, 2, 3},
-                                  {0, 3, 4},
-                                  {0, 4, 5}};
+vector<vector<int>> second_matrix{{1},
+                                  {1},
+                                  {1}};
+
+vector<vector<int>> result_matrix;
 
 unsigned long RESULT_MATRIX_ROW_COUNT = first_matrix.size();
 unsigned long RESULT_MATRIX_COLUMN_COUNT = second_matrix.at(0).size();
@@ -76,18 +79,33 @@ vector<position > find_positions_to_compute(int index) {
 void compute_partial_result_matrix(int index) {
     vector<position > positions_to_compute = find_positions_to_compute(index);
 
-    assignments_mutex.lock();
-    cout << "Thread " << index << endl;
-    for (const auto &pos: positions_to_compute) {
-        cout << pos.at(0) << " , " << pos.at(1) << endl;
+    for (const auto &row_column_pair: positions_to_compute) {
+        int row = row_column_pair.at(0);
+        int column = row_column_pair.at(1);
+
+        result_matrix.at(row).at(column) = compute_element_on_position(row, column);
     }
-    cout << "---" << endl;
+}
 
-    assignments_mutex.unlock();
+void initialize_result_matrix() {
+    for (int row = 0; row < RESULT_MATRIX_ROW_COUNT; row++) {
+        vector<int> column(RESULT_MATRIX_COLUMN_COUNT, INITIAL_VALUE);
+        result_matrix.push_back(column);
+    }
+}
 
+void print_matrix(const vector<vector<int>> matrix) {
+    for (int row = 0; row < matrix.size(); row++) {
+        for (int column = 0; column < matrix.at(row).size(); column++) {
+            cout << matrix.at(row).at(column) << " ";
+        }
+
+        cout << endl;
+    }
 }
 
 int main() {
+    initialize_result_matrix();
     thread matrix_multiplication_worker[THREAD_COUNT];
 
     for (int index = 0; index < THREAD_COUNT; index++) {
@@ -97,6 +115,8 @@ int main() {
     for (int index = 0; index < THREAD_COUNT; index++) {
         matrix_multiplication_worker[index].join();
     }
+
+    print_matrix(result_matrix);
 
     return 0;
 }

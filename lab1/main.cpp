@@ -143,9 +143,9 @@ void initialize_products_mutexes(unsigned long size) {
 }
 
 int main() {
-    _products = read_products_from_file("/Users/alexnedelcu/Desktop/Uni/PPD/lab1/products.txt");
+    _products = read_products_from_file("/Users/alexandru.nedelcu.ext/Desktop/Other/Uni/PPD/parallel-distributed-programming/lab1/products.txt");
     _products_initial_snapshot = _products;
-    _sale_operations = read_sale_operations_from_file("/Users/alexnedelcu/Desktop/Uni/PPD/lab1/sale_operation_components.txt");
+    _sale_operations = read_sale_operations_from_file("/Users/alexandru.nedelcu.ext/Desktop/Other/Uni/PPD/parallel-distributed-programming/lab1/sale_operation_components.txt");
 
     initialize_global_variables();
     initialize_products_mutexes(_products.size());

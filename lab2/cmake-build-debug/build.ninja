@@ -36,7 +36,7 @@ include CMakeFiles/rules.ninja
 #############################################
 # Logical path to working directory; prefix for absolute paths.
 
-cmake_ninja_workdir = /Users/alexnedelcu/Desktop/Uni/PPD/lab2/cmake-build-debug/
+cmake_ninja_workdir = /Users/alexandru.nedelcu.ext/Desktop/Other/Uni/PPD/parallel-distributed-programming/lab2/cmake-build-debug/
 # =============================================================================
 # Object build statements for EXECUTABLE target lab2
 
@@ -46,9 +46,9 @@ cmake_ninja_workdir = /Users/alexnedelcu/Desktop/Uni/PPD/lab2/cmake-build-debug/
 
 build cmake_object_order_depends_target_lab2: phony || CMakeFiles/lab2.dir
 
-build CMakeFiles/lab2.dir/consumer_checks_partial_products_list.cpp.o: CXX_COMPILER__lab2_Debug /Users/alexnedelcu/Desktop/Uni/PPD/lab2/consumer_checks_partial_products_list.cpp || cmake_object_order_depends_target_lab2
+build CMakeFiles/lab2.dir/consumer_checks_partial_products_list.cpp.o: CXX_COMPILER__lab2_Debug /Users/alexandru.nedelcu.ext/Desktop/Other/Uni/PPD/parallel-distributed-programming/lab2/consumer_checks_partial_products_list.cpp || cmake_object_order_depends_target_lab2
   DEP_FILE = CMakeFiles/lab2.dir/consumer_checks_partial_products_list.cpp.o.d
-  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk -std=gnu++14
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk -std=gnu++14
   OBJECT_DIR = CMakeFiles/lab2.dir
   OBJECT_FILE_DIR = CMakeFiles/lab2.dir
   TARGET_COMPILE_PDB = CMakeFiles/lab2.dir/
@@ -63,7 +63,7 @@ build CMakeFiles/lab2.dir/consumer_checks_partial_products_list.cpp.o: CXX_COMPI
 # Link the executable lab2
 
 build lab2: CXX_EXECUTABLE_LINKER__lab2_Debug CMakeFiles/lab2.dir/consumer_checks_partial_products_list.cpp.o
-  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk
   OBJECT_DIR = CMakeFiles/lab2.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -76,7 +76,7 @@ build lab2: CXX_EXECUTABLE_LINKER__lab2_Debug CMakeFiles/lab2.dir/consumer_check
 # Utility command for edit_cache
 
 build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /Users/alexnedelcu/Desktop/Uni/PPD/lab2/cmake-build-debug && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  COMMAND = cd /Users/alexandru.nedelcu.ext/Desktop/Other/Uni/PPD/parallel-distributed-programming/lab2/cmake-build-debug && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -87,7 +87,7 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /Users/alexnedelcu/Desktop/Uni/PPD/lab2/cmake-build-debug && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S/Users/alexnedelcu/Desktop/Uni/PPD/lab2 -B/Users/alexnedelcu/Desktop/Uni/PPD/lab2/cmake-build-debug
+  COMMAND = cd /Users/alexandru.nedelcu.ext/Desktop/Other/Uni/PPD/parallel-distributed-programming/lab2/cmake-build-debug && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S/Users/alexandru.nedelcu.ext/Desktop/Other/Uni/PPD/parallel-distributed-programming/lab2 -B/Users/alexandru.nedelcu.ext/Desktop/Other/Uni/PPD/parallel-distributed-programming/lab2/cmake-build-debug
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -103,7 +103,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # =============================================================================
 
 #############################################
-# Folder: /Users/alexnedelcu/Desktop/Uni/PPD/lab2/cmake-build-debug
+# Folder: /Users/alexandru.nedelcu.ext/Desktop/Other/Uni/PPD/parallel-distributed-programming/lab2/cmake-build-debug
 
 build all: phony lab2
 
